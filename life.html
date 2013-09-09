@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The Game of Life</title>
+</head>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<script src="interface.js">
+</script>
+<script src="life_def.js">
+</script>
+
+<script type="text/javascript">
+var size = 20;
+var game = new Life(size);
+game.initialise();
+</script>
+
+<body onload="draw(size)">
+
+
+<div id="controls">
+	<div id="slider">
+    <p align="center"> Speed </p>
+    <input type="range" id="range" min="0" max="5" step="1" value="" onchange="speed_change()"/>
+    </div>       
+<input type="button" id ="pbutton" onclick="play(game)" value="Play"></button>
+</div>
+<br/>
+<div id="canvas"></div>
+</body>
+</html>

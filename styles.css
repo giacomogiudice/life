@@ -1,0 +1,60 @@
+@charset "UTF-8";
+#canvas
+{
+	background-color: black;
+	display: inline-block;
+	padding: 10px;
+}
+#controls
+{
+	background-color: black;
+	margin:10px;
+	display: inline-block;
+}
+
+#slider
+{
+	background-color: white;
+	margin: 1px;
+	display: inline-block;
+}
+
+#boardtable
+{
+	border: 0px;
+	cellspacing: 0px;
+	cellpadding: 0px
+	border-spacing: 0px;
+	border-width: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+}
+
+p
+{
+	margin: 1px;
+	padding: 0px;
+}
+table td, table th
+{
+    padding: 0; /* 'cellpadding' equivalent */
+}
+
+img
+{
+	border: 0px;
+	padding: 0px;
+}
+.on
+{
+	content:url("square-black.gif");
+}
+.off
+{
+	content:url("square-white.gif");
+}
+
+#pbutton
+{
+	width: 60px;
