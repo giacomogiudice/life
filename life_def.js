@@ -60,7 +60,7 @@ Life.prototype.check = function(x,y)
         }
     }
     
-    if(this.board.matrix[x][y] == 1 && living_cells >= 2 && living_cells <= 3){return 1;}
+    if(this.board.matrix[x][y] == 1 && (living_cells == 2 || living_cells == 3)){return 1;}
     else if(this.board.matrix[x][y] == 0 && living_cells == 3){return 1;}
     else {return 0;}
 }
@@ -95,5 +95,7 @@ Life.prototype.initialise = function()
     this.board.matrix[3][3] = 1;
     this.board.matrix[3][4] = 1;
     this.board.matrix[4][4] = 1;
+	this.board.matrix[5][4] = 1;
+	this.board.matrix[5][5] = 1;
 }
 	

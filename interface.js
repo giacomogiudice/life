@@ -1,6 +1,5 @@
 var timer;
 var time_lapse = 1000;//in msecs
-var speed;
 
 function draw(size)
 {
@@ -21,6 +20,7 @@ function draw(size)
 			img.setAttribute('id','cell'+i+','+j);
 			img.onclick = function ()
 			{
+				//toggle function for each cell
 				var state = this.className;
 				var coord;
 				var x,y;
@@ -47,26 +47,21 @@ function draw(size)
 		table.appendChild(row);
 	}
 	canvas.appendChild(table);
+	next_step(game);
 }
 
-function turn(x,y)
-{
-	var cell = document.getElementById('cell'+x+','+y);
-	if (cell.className == "off"){cell.setAttribute('class','on');}
-							else{cell.setAttribute('class','off');}
-}
 
-function run(life)
+
+function next_step(life)
 {
+	var cell;
 	for(i = 0; i < life.b_size; i++)
 	{
 		for(j = 0; j < life.b_size; j++)
 		{
-			if(life.board.matrix[i][j])
-			{
-				turn(i,j);
-			}
-			
+			cell = document.getElementById('cell'+i+','+j);
+			if(life.board.matrix[i][j]){cell.setAttribute('class','on');}
+			else{cell.setAttribute('class','off');}
 		}
 	}
 	life.next();
@@ -74,11 +69,11 @@ function run(life)
 
 function play(life)
 {
-	var button = document.getElementById('pbutton');
+	var button = document.getElementById('playButton');
 	if(button.value == 'Play')
 	{
 		button.setAttribute('value','Pause');
-		timer = setInterval(function(){run(life)},time_lapse);
+		timer = setInterval(function(){next_step(life)},time_lapse);
 	}
 	else
 	{
@@ -90,7 +85,7 @@ function play(life)
 function speed_change()
 {
 	var range = document.getElementById("range");
-	speed = range.value;	
+	time_lapse = 1000/range.value;
 }
 
 

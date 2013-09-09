@@ -22,9 +22,10 @@ game.initialise();
 <div id="controls">
 	<div id="slider">
     <p align="center"> Speed </p>
-    <input type="range" id="range" min="0" max="5" step="1" value="" onchange="speed_change()"/>
+    <input type="range" id="range" min="1" max="6" step="1" value="1" onchange="speed_change()"/>
     </div>       
-<input type="button" id ="pbutton" onclick="play(game)" value="Play"></button>
+<input type="button" id="playButton" class="controlButton" onclick="play(game)" value="Play"></button>
+<input type="button" class="controlButton" onclick="next_step(game)" value="Step"></button>
 </div>
 <br/>
 <div id="canvas"></div>
