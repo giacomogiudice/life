@@ -16,6 +16,8 @@ var game;
 
 function setup()
 {
+	//this doesn't really work
+	/*
 	var main_container = document.getElementById('main_container');
 	if(document.body.clientWidth < document.body.clientHeight)
 	{
@@ -26,7 +28,7 @@ function setup()
 		main_container.offsetWidth = document.body.clientHeight;
 	}
 	if(main_container.clientWidth > 800){main_container.offsetWidth = 800;}
-	
+	*/
 	n_cells = parseInt((document.getElementById('main_container').clientWidth-20)/17);
 	
 	game = new Life(n_cells);
