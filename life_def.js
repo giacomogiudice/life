@@ -91,11 +91,10 @@ Life.prototype.initialise = function()
 		}
 	}
 	
-	this.board.matrix[2][2] = 1;
-    this.board.matrix[3][3] = 1;
-    this.board.matrix[3][4] = 1;
-    this.board.matrix[4][4] = 1;
-	this.board.matrix[5][4] = 1;
-	this.board.matrix[5][5] = 1;
+	this.board.matrix[10][10] = 1;
+    this.board.matrix[11][11] = 1;
+    this.board.matrix[11][10] = 1;
+    this.board.matrix[11][12] = 1;
+	this.board.matrix[12][11] = 1;
 }
 	

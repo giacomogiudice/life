@@ -1,5 +1,5 @@
 var timer;
-var time_lapse = 1000;//in msecs
+var time_lapse;
 
 function draw(size)
 {
@@ -47,6 +47,9 @@ function draw(size)
 		table.appendChild(row);
 	}
 	canvas.appendChild(table);
+	
+	speed_change(); //initialise time_lapse;
+	// ok, this  needs to be removed when patterns can be chosen
 	next_step(game);
 }
 
@@ -54,6 +57,7 @@ function draw(size)
 
 function next_step(life)
 {
+	life.next();
 	var cell;
 	for(i = 0; i < life.b_size; i++)
 	{
@@ -64,7 +68,6 @@ function next_step(life)
 			else{cell.setAttribute('class','off');}
 		}
 	}
-	life.next();
 }
 
 function play(life)
@@ -85,7 +88,10 @@ function play(life)
 function speed_change()
 {
 	var range = document.getElementById("range");
-	time_lapse = 1000/range.value;
+	time_lapse = 1500/range.value;
+	clearInterval(timer);
+	document.getElementById('playButton').setAttribute('value','Play');
+	
 }
 
 
