@@ -91,10 +91,46 @@ Life.prototype.initialise = function()
 		}
 	}
 	
-	this.board.matrix[10][10] = 1;
+	/*this.board.matrix[10][10] = 1;
     this.board.matrix[11][11] = 1;
     this.board.matrix[11][10] = 1;
     this.board.matrix[11][12] = 1;
-	this.board.matrix[12][11] = 1;
+	this.board.matrix[12][11] = 1;*/
 }
+
+Life.prototype.preset = function(p_num)
+{
+	var m=parseInt(this.b_size/2);
+	if(p_num==1)
+	{
+		this.board.matrix[m-1][m-1] = 1;
+	  	this.board.matrix[m][m] = 1;
+	  	this.board.matrix[m][m-1] = 1;
+	  	this.board.matrix[m][m+1] = 1;
+	  	this.board.matrix[m+1][m] = 1;
+	}
+	else if(p_num==2)
+	{
+		this.board.matrix[m][m] = 1;
+	  	this.board.matrix[m-1][m] = 1;
+	  	this.board.matrix[m][m+1] = 1;
+	  	this.board.matrix[m+1][m] = 1;
+	}
+	else if(p_num==3)
+	{
+		this.board.matrix[m-2][m] = 1;
+		this.board.matrix[m-1][m-1] = 1;
+	  	this.board.matrix[m][m-1] = 1;
+	  	this.board.matrix[m][m+1] = 1;
+	  	this.board.matrix[m][m] = 1;
+	}
+	else if(p_num==4)
+	{
+		alert('boo');
+	}
+	
+		
+}
+
+
 	

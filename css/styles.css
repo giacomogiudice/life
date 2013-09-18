@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+body
+{
+	margin:0px;
+	//background-color:#CCCCFF;
+	background-image:url(../img/compo4.png);
+	background-position:center;
+	font: "Lucida Grande","Helvetica", sans-serif;
+	font-size: 15px;
+}
+
+p,button,input
+{
+	font:inherit;
+	font-size:inherit;
+}
+
+label
+{
+	align: center;
+	display: block;
+}
+
+#main_container
+{
+	text-align:center;
+	margin: 0px auto;
+	padding:0px;
+	
+}
+
+#canvas
+{
+	background-color: black;
+	display: inline-block;
+	padding: 10px;
+	margin: 0 auto;
+}
+#controls
+{
+	background-image:url(../img/translucent.png);
+	border: 2px black solid;
+	margin: 10px;
+	padding: 2px;
+	text-align:center;
+}
+
+
+.ctrl_elem
+{
+	height:50px;
+	margin: 0px;
+}
+
+.presetSelect select
+{
+	background: transparent;
+   overflow:hidden;
+   padding: 5px;
+   margin:0px;
+   width:inherit;
+   font-size: inherit;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   -webkit-appearance: none;
+   -moz-appearance:window;
+   
+   
+}
+.presetSelect
+{
+	width:110px;
+   overflow: hidden;
+   background: url(../img/select-arrow.png) no-repeat right transparent;
+   margin:0px;
+   border: 2px solid #000;
+   border-radius: 5px;
+}
+
+
+
+#boardtable
+{
+	border: 0px;
+	cellspacing: 0px;
+	cellpadding: 0px;
+	border-spacing: 1px;
+	border-width: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+}
+
+p
+{
+	margin: 1px;
+	padding: 0px;
+}
+table td, table th
+{
+    padding: 0; /* 'cellpadding' equivalent */
+}
+
+img
+{
+	border: 0px;
+	padding: 0px;
+}
+
+.on
+{
+	background-color:black;
+	width:10px; height:10px;
+}
+.off
+{
+	background-color:white;
+	width:10px; height:10px;
+}
+
+.controlButton
+{
+	width: 60px;
+}
+
+

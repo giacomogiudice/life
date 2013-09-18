@@ -4,53 +4,82 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>The Game of Life</title>
 </head>
-<link rel="stylesheet" type="text/css" href="styles.css" />
-<script src="interface.js">
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<body>
+
+
+<div id="main_container">
+<div id="controls">
+<table>
+<tr><td>
+<div class="presetSelect">
+<select name="presets" id="presets"  onchange="change_preset(this)">
+	<option selected="selected">Blank</option>
+ 	<option>5-square</option>
+	<option>4-square</option>
+	<option>Glider</option>
+</select>
+</div>
+<!--</td><td>
+<input type="button" id="resetButton" class="controlButton" onclick="reset()" value="Set"/>-->
+</td><td>
+ 
+    <!--<label> Speed</label>-->
+    <input type="range" id="range" min="1" max="30" step="0.1" value="3" onchange="speed_change()"/>
+      
+    </td><td>     
+
+<img id="playButton" class= "ctrl_elem" src="img/ctrl-play.png"
+onclick="play()" onmousedown="this.src='img/ctrl-play-down.png'" onmouseup="this.src='img/ctrl-pause.png'"/>
+</td><td>
+
+<img id="playButton" class= "ctrl_elem" src="img/ctrl-step.png" onclick="next_step()" onmousedown="this.src='img/ctrl-step-down.png'" onmouseup="this.src='img/ctrl-step.png'"/>
+</td></tr>
+</table>
+</div>
+<div id="canvas"></div>
+</div>
+
+
+<!--  JS starts here  -->
+<script src="js/interface.js">
 </script>
-<script src="life_def.js">
+<script src="js/life_def.js">
 </script>
+<script src="js/jquery-1.6.4.min.js">
+</script>
+
 
 <script type="text/javascript">
 var n_cells;
 var game;
 
+$(document).ready(setup);
+
 function setup()
 {
-	//this doesn't really work
-	/*
-	var main_container = document.getElementById('main_container');
-	if(document.body.clientWidth < document.body.clientHeight)
+	//$('#presets').selectBox();
+	
+	var w=$(window).width();
+	var h=$(window).height()-80;
+	
+	if(w < h)
 	{
-		main_container.offsetWidth = document.body.clientWidth;
+		$('#main_container').css('width',w);
 	}
 	else
 	{
-		main_container.offsetWidth = document.body.clientHeight;
+		$('#main_container').css('width',h);
+		
 	}
-	if(main_container.clientWidth > 800){main_container.offsetWidth = 800;}
-	*/
-	n_cells = parseInt((document.getElementById('main_container').clientWidth-20)/17);
+	if($('#main_container').width() > 800){$('#main_container').css('width','800px');}
 	
+	n_cells = parseInt((document.getElementById('main_container').clientWidth-20)/11);
 	game = new Life(n_cells);
 	game.initialise();
 	draw(n_cells);
 }
 
 </script>
-
-<body onload="setup()">
-
-<div id="main_container">
-<div id="controls">
-	<div id="slider">
-    <p align="center"> Speed </p>
-    <input type="range" id="range" min="1" max="30" step="0.1" value="3" onchange="speed_change()"/>
-    </div>       
-<input type="button" id="playButton" class="controlButton" onclick="play(game)" value="Play"></button>
-<input type="button" class="controlButton" onclick="next_step(game)" value="Step"></button>
-</div>
-<br/>
-<div id="canvas"></div>
-</div>
 </body>
 </html>
